@@ -1,0 +1,8 @@
+.header{
+    backdrop-filter: blur(23px) saturate(1.3);
+}
+
+.bla:focus{
+    border: 200px green !important;
+  @apply ring-blue-500 border-blue-500;
+}

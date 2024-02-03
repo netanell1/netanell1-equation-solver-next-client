@@ -1,0 +1,30 @@
+.typed-out{
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 0.2s steps(50, end) forwards;
+    // animation-duration: 4s;
+    // font-size: 1.6rem;
+    width: 0;
+  }
+  @keyframes typing {
+    0% { width: 0;   border-right: .15em solid rgb(201, 60, 201); }
+    45% { width: 100%;}
+    to{width: 100%;}
+    100%{border: 0;}
+  }
+  
+  .mt--3{
+    margin-top: -3px;
+  }
+  
+  .fade-in{
+    //   opacity: 0;
+      animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  }
+  
+  
+  @keyframes fade-in {
+  from{opacity: 0;};
+//   100%{opacity: 1;};
+ to{opacity: 1;}
+  }

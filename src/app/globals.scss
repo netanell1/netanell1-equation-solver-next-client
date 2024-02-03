@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+::-webkit-scrollbar {
+  background-color: #000;
+  width: 12px;
+  // border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  // border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: -webkit-gradient(linear, left bottom, left top,color-stop(.5, rgb(192 132 252 / 1)), color-stop(.5, rgb(192 132 252 / 1)), color-stop(1, rgb(59 130 246 / 1)));
+  border-radius: 10px;
+}
+
+::-moz-selection { /* Code for Firefox */
+@apply bg-red-300 text-black
+}
+
+::selection {
+  @apply bg-red-300 text-black
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  // direction: rtl;
+  // background: linear-gradient(
+  //     to bottom,
+  //     transparent,
+  //     rgb(var(--background-end-rgb))
+  //   )
+  //   rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.btn--blue {
+  @apply bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded disabled:bg-gray-500 disabled:text-gray-100;
+}
+
+.btn--blue-dark {
+  @apply bg-blue-900 hover:bg-blue-950 text-white font-bold py-2 px-4 rounded disabled:bg-gray-500 disabled:text-gray-100;
+}
+
+.btn--gray {
+  @apply bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded disabled:bg-gray-500 disabled:text-gray-100;
+}
+
+.btn--green {
+  @apply bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded disabled:bg-gray-500 disabled:text-gray-100;
+}
+
+.btn--yellow {
+  @apply bg-yellow-600  hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded disabled:bg-gray-500 disabled:text-gray-100;
+}
+
+.btn--gray-dark {
+  @apply bg-gray-900  hover:bg-gray-950 text-white font-bold py-2 px-4 rounded disabled:bg-gray-500 disabled:text-gray-100;
+}
+
+
+.btn--red {
+  @apply bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded;
+}
+
+.btn--ppurple {
+  @apply bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded;
+}
+
+.text-mix{
+  color:  color-mix(in srgb, rgb(192 132 252 / 1) 50%, rgb(59 130 246 / 1)50%);
+}
+
+.solvy-txt{
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #000;
+  @apply text-mix font-mono font-extrabold
+}
+
+  .title-page{
+    @apply text-center text-5xl text-yellow-50 font-serif mb-4
+  }
+  
+  .max-width-calc-screen{
+    max-width: calc(100% - 20px);
+  }
+
+.bg-body{
+  background: linear-gradient(to top, color-mix(in srgb,  rgb(29 78 216 /1) 50%,  rgb(126 34 206 / 1) 50%), rgb(19, 19, 19)); /* Define gradient background */
+  background-attachment: fixed; /* Fixed background */
+  color:white;
+}
