@@ -5,9 +5,6 @@ import TypingAnimation from "@/components/typingAnimation/typingAnimation";
 export const metadata: Metadata = {
     title: 'About | Solvy',
     description: 'About page | solvy',
-    icons: {
-        icon: '/homePage.ico'
-    }
 }
 
 
