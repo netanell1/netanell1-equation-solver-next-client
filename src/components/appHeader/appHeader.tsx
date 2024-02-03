@@ -11,10 +11,10 @@ export default function AppHeader() {
     return (
         <header className={`sticky top-0 w-screen z-10 ${styles.header}`}>
             <div className={"relative h-20"}>
-                <nav className="px-5 py-5">
+                <nav className="px-1 py-5">
                     <div className="flex mx-auto max-w-5xl">
                         <ul className="flex gap-4">
-                            <li className="text-gray-300 hover:text-gray-500 rounded-md px-3 py-2 text-2xl solvy-txt -mt-2 font-medium">
+                            <li className="text-gray-300 hover:text-gray-500 rounded-md px-3 py-2 pe-9 text-2xl solvy-txt -mt-2 font-medium">
                                 <Link className="flex" href={`${PathsItems.home.path}`}>
                                     <Image alt="" src={favicon} width={40} height={20} />
                                     <div>Solvy</div>

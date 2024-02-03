@@ -131,8 +131,8 @@ export default function SolutionPage(props: SolutionPageProps) {
                         </TypingAnimation>
                     </ul>
                     <TypingAnimation animationDelay={4} classDivChildren=" mt-16 mb-16 flex mt-5 gap-5 justify-center">
-                        <Link className="btn--blue" href={`${PathsItems.equationWithOneVariable.path}/${PathsItems.equationWithOneVariable.parmas}`}>Equation with one variable</Link>
-                        <Link className="btn--ppurple" href={`${PathsItems.equationsWithTwoVariables.path}/${PathsItems.equationsWithTwoVariables.parmas}`}>Two equations with two variables</Link>
+                        <Link className="btn--blue block" href={`${PathsItems.equationWithOneVariable.path}/${PathsItems.equationWithOneVariable.parmas}`}>Equation with one variable</Link>
+                        <Link className="btn--purple block" href={`${PathsItems.equationsWithTwoVariables.path}/${PathsItems.equationsWithTwoVariables.parmas}`}>Two equations with two variables</Link>
                     </TypingAnimation>
                 </div>
             }

@@ -30,7 +30,7 @@ export default function Home() {
       </div>
       <div className="flex gap-10 mt-5 justify-center">
         <Link className="btn--blue" href={`${PathsItems.equationWithOneVariable.path}/${PathsItems.equationWithOneVariable.parmas}`}>Equation with one variable</Link>
-        <Link className="btn--ppurple" href={`${PathsItems.equationsWithTwoVariables.path}/${PathsItems.equationsWithTwoVariables.parmas}`}>Two equations with two variables</Link>
+        <Link className="btn--purple" href={`${PathsItems.equationsWithTwoVariables.path}/${PathsItems.equationsWithTwoVariables.parmas}`}>Two equations with two variables</Link>
       </div>
     </div>
   );
