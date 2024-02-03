@@ -12,6 +12,13 @@ import Link from "next/link";
 import { PathsItems } from "@/config/paths.config";
 import LoadingSolution from "@/components/loadingSolution/loadingSolution";
 import { ErrorscodeEnum } from "@/models/enums/errorscode.enum";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+    title: 'Solution | Solvy',
+    description: 'Solution page | solvy',
+}
 
 
 interface SolutionPageProps {
