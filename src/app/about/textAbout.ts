@@ -94,7 +94,7 @@ export const textAabout: TextTypeOutModel[] = [
         class: ""
     },
     {
-        text: "Ready to dive in? Enter your equation now and let's conquer those variables together! 🚀🧮",
+        text: "Ready to dive in? Enter your equation now",
         class: "text-2xl mt-5"
     },
     {
