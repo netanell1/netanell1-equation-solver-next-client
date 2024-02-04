@@ -103,9 +103,6 @@ export default function SolutionPage(props: SolutionPageProps) {
                 })
                 break;
             default:
-                if (data?.type) {
-                    router.back()
-                }
                 break;
         }
     }
