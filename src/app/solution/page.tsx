@@ -15,14 +15,15 @@ import { ErrorscodeEnum } from "@/models/enums/errorscode.enum";
 import { Metadata } from "next";
 
 
-export const metadata: Metadata = {
-    title: 'Solution | Solvy',
-    description: 'Solution page | solvy',
-}
+// export const metadata: Metadata = {
+//     title: 'Solution | Solvy',
+//     description: 'Solution page | solvy',
+// }
 
 
 interface SolutionPageProps {
-    params: { data: string };
+    params: {};
+    searchParams: { eq: string }
 }
 
 export default function SolutionPage(props: SolutionPageProps) {
@@ -38,7 +39,7 @@ export default function SolutionPage(props: SolutionPageProps) {
 
     useEffect(() => {
         try {
-            const url = decodeURIComponent(props.params.data)
+            const url = decodeURIComponent(props.searchParams.eq)
             setData(JSON.parse(url))
         } catch (error) {
             router.back()
@@ -64,6 +65,7 @@ export default function SolutionPage(props: SolutionPageProps) {
                 break;
 
             default:
+                // router.back()
                 break;
         }
         setTextError({ ...textError })
@@ -101,7 +103,9 @@ export default function SolutionPage(props: SolutionPageProps) {
                 })
                 break;
             default:
-                // router.back()
+                if (data?.type) {
+                    router.back()
+                }
                 break;
         }
     }
@@ -113,9 +117,9 @@ export default function SolutionPage(props: SolutionPageProps) {
             <TypingAnimation text={[{ text, class: "text-2xl mb-5 " }]} />
 
             {error ? <div>
-                <TypingAnimation animationDelay={2} text={[textError]} classDivChildren="flex mt-5 gap-5 justify-center">
-                    <Link className="btn--yellow block" href={`${PathsItems[EquationEnum[data?.type]].path}/${JSON.stringify(data)}`}>{`I want to fix my equation${data?.type == EquationEnum.equationsWithTwoVariables ? 's' : ''}`}</Link>
-                    <Link className="btn--green block" href={`${PathsItems[EquationEnum[data?.type]].path}/${PathsItems[EquationEnum[data?.type]].parmas}`}>{`Give me a new equation${data?.type == EquationEnum.equationsWithTwoVariables ? 's' : ''}`}</Link>
+                <TypingAnimation animationDelay={2} text={[textError]} classDivChildren="flex mt-20 gap-5 justify-center">
+                    <Link className="btn--white block" href={`${PathsItems[EquationEnum[data?.type]].path}?eq=${encodeURIComponent(JSON.stringify(data))}`}>{`I want to fix my equation${data?.type == EquationEnum.equationsWithTwoVariables ? 's' : ''}`}</Link>
+                    <Link className="btn--white block" href={`${PathsItems[EquationEnum[data?.type]].path}`}>{`Give me a new equation${data?.type == EquationEnum.equationsWithTwoVariables ? 's' : ''}`}</Link>
                 </TypingAnimation>
             </div>
                 : <div>
@@ -137,7 +141,7 @@ export default function SolutionPage(props: SolutionPageProps) {
                             })}
                         </TypingAnimation>
                     </ul>
-                    <TypingAnimation animationDelay={4} classDivChildren=" mt-16 mb-16 flex mt-5 gap-5 justify-center">
+                    <TypingAnimation animationDelay={4} classDivChildren=" mt-16 mb-16 flex mt-20 gap-5 justify-center">
                         <Link className="btn--blue block" href={`${PathsItems.equationWithOneVariable.path}/${PathsItems.equationWithOneVariable.parmas}`}>Equation with one variable</Link>
                         <Link className="btn--purple block" href={`${PathsItems.equationsWithTwoVariables.path}/${PathsItems.equationsWithTwoVariables.parmas}`}>Two equations with two variables</Link>
                     </TypingAnimation>

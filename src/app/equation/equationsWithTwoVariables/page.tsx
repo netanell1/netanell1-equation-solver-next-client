@@ -10,13 +10,14 @@ export const metadata: Metadata = {
 }
 
 interface EquationsWithTwoVariablesPageProps {
-    params: { data: string };
+    params: {};
+    searchParams: { eq: string }
 }
 
 export default function EquationsWithTwoVariablesPage(props: EquationsWithTwoVariablesPageProps) {
     let data;
     try {
-        const url = decodeURIComponent(props.params.data)
+        const url = decodeURIComponent(props.searchParams.eq)
         data = JSON.parse(url)
     } catch (error) {
         data = null

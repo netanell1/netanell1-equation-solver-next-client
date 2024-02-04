@@ -11,13 +11,14 @@ export const metadata: Metadata = {
 
 
 interface EquationWithOneVariablePageProps {
-    params: { data: string };
+    params: {};
+    searchParams: { eq: string }
 }
 
 export default function EquationWithOneVariablePage(props: EquationWithOneVariablePageProps) {
     let data;
     try {
-        const url = decodeURIComponent(props.params.data)
+        const url = decodeURIComponent(props.searchParams.eq)
         data = JSON.parse(url)
     } catch (error) {
         data = null

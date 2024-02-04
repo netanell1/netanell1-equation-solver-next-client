@@ -7,7 +7,7 @@ export async function solveEquationWithOneVariable(equation: string) {
     // try {
     const respone = await fetch(`${serverPath}/solve_equation_with_one_variable`, {
         method: 'POST',
-        body: JSON.stringify({ equation })
+        body: JSON.stringify({ equation: equation.toLocaleLowerCase() })
     })
     if (!respone.ok) {
         throw respone
@@ -23,7 +23,7 @@ export async function solveEquationsWithTwoVariables(equation1: string, equation
     // try {
     const respone = await fetch(`${serverPath}/solve_equations_with_two_variables`, {
         method: 'POST',
-        body: JSON.stringify({ equation1, equation2 })
+        body: JSON.stringify({ equation1: equation1.toLocaleLowerCase(), equation2: equation2.toLocaleLowerCase() })
     })
     if (!respone.ok) {
         throw respone

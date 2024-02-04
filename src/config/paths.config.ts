@@ -3,8 +3,8 @@ import { PathItemModel, PathItemObjectModel } from "@/models/interfaces/pathItem
 export const PathsItems: PathItemObjectModel = {
     home: { title: "Home", path: "/", parmas: "", showInMenue: false },
     about: { title: "About", path: "/about", parmas: "", showInMenue: true },
-    equationWithOneVariable: { title: "One variable", parmas: "null", path: "/equation/equationWithOneVariable", showInMenue: true },
-    equationsWithTwoVariables: { title: "Two variables", parmas: "null", path: "/equation/equationsWithTwoVariables", showInMenue: true },
+    equationWithOneVariable: { title: "One variable", parmas: "", path: "/equation/equationWithOneVariable", showInMenue: true },
+    equationsWithTwoVariables: { title: "Two variables", parmas: "", path: "/equation/equationsWithTwoVariables", showInMenue: true },
     solution: { title: "solution", path: "/solution", parmas: "", showInMenue: false }
 }
 

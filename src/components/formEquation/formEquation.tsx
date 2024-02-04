@@ -29,7 +29,7 @@ export default function FormEquation({ equations, buttonText, type, moreCharsAll
         mode: "onChange", reValidateMode: "onChange",
     })
     const onSubmit: SubmitHandler<Inputs> = (data) => {
-        router.push(`${PathsItems.solution.path}/${JSON.stringify({ ...data, type })}`)
+        router.push(`${PathsItems.solution.path}?eq=${encodeURIComponent(JSON.stringify({ ...data, type }))}`)
     }
 
     const equationVaild = (equation: string) => {
@@ -41,7 +41,7 @@ export default function FormEquation({ equations, buttonText, type, moreCharsAll
                 if (isNaN(+s)) {
                     for (const char of charts) {
                         // debugger
-                        if (s == char) {
+                        if (s.toLowerCase() == char.toLowerCase()) {
                             charVaild = true
                             break
                         }
@@ -65,7 +65,7 @@ export default function FormEquation({ equations, buttonText, type, moreCharsAll
             {equations.map((equation, index) =>
                 <div key={index} className="mb-5">
                     <label className="block mb-2 text-lg font-medium text-center">{equation.label}</label>
-                    <input defaultValue={equation.defaultValue} {...register(equation.keyForm, { required: true, validate: { equationVaild }, value: equation.defaultValue })} type="text" className={"bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:outline-none focus:ring focus:border-blue-500 block  p-2.5 text-xl text-center w-3/6 m-auto"} />
+                    <input defaultValue={equation.defaultValue} {...register(equation.keyForm, { required: true, validate: { equationVaild }, value: equation.defaultValue })} type="text" className={"bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:outline-none focus:ring focus:border-blue-500 block  p-2.5 text-xl text-center w-3/6 min-w-80 m-auto"} />
                     {errors[equation.keyForm]?.type == "equationVaild" &&
                         <div className="text-red-500 font-semibold text-center mt-2">
                             Invalid characters
