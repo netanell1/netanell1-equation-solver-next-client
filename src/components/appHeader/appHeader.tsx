@@ -7,6 +7,7 @@ import styles from "./appHeader.module.scss"
 
 export default function AppHeader() {
     const menueItems = getMunueItems(true) as PathItemModel[]
+    console.log('menu');
 
     return (
         <header className={`sticky top-0 w-screen z-10 ${styles.header}`}>
